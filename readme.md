@@ -12,3 +12,18 @@ can #include various system files.  It should be run tucked away in a chroot
 jail with normal user privileges and the copy of clang invoked should not capable
 of producing X86 binaries.  The server doesn't need any support files, so don't
 include the Go environment in the jail.
+
+The web backend is dead-simple.  Send a POST to /compile containing a JSON object
+with the filename and contents. ```
+{
+  "filename" : "fib.c", 
+  "contents" : "int main(){}"
+}```
+
+The server will return a JSON object containing the compiler's output and errors, if any. ```
+{
+  "assembly":"...",
+  "ErrorOutput":"...",
+  "Filename":"..."
+}```
+
