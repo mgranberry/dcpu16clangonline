@@ -10,6 +10,17 @@ a {
 	color: darkblue;
 }
 
+textarea {
+	display: block;
+	resize: none;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+}
+
 a:visited {	
 	color: darkblue; 
 }
